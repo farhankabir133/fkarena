@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head content remains the same) ... -->
+</head>
+<body class="about">
+    <!-- ... (body content remains the same until the skills section) ... -->
+
+    <!-- Skills Starts -->
+    <div class="row" id="skills-section">
+        <div class="col-12">
+            <h3 class="text-uppercase pb-4 pb-sm-5 mb-3 mb-sm-0 text-left text-sm-center custom-title ft-wt-600">My Skills</h3>
+        </div>
+        
+        <div class="col-6 col-md-3 mb-3 mb-sm-5">
+            <div class="c100 p89">
+                <span>90%</span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+            </div>
+            <h6 class="text-uppercase open-sans-font text-center mt-2 mt-sm-4">wordpress</h6>
+        </div>
+        <!-- ... (other skill items remain the same) ... -->
+    </div>
+    <!-- Skills Ends -->
+
+    <!-- ... (remaining content stays the same) ... -->
+
+    <!-- js files -->
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/styleswitcher.js"></script>
+    <script src="js/preloader.min.js"></script>
+    <script src="js/fm.revealator.jquery.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpGridGallery.js"></script>
+    <script src="js/jquery.hoverdir.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Add this new script for reloading skill bars -->
+    <script>
+    function reloadSkillBars() {
+        const skillBars = document.querySelectorAll('#skills-section .c100');
+        skillBars.forEach(bar => {
+            const percentage = parseInt(bar.className.match(/p(\d+)/)[1]);
+            bar.classList.remove(`p${percentage}`);
+            void bar.offsetWidth; // Trigger reflow
+            bar.classList.add(`p${percentage}`);
+        });
+    }
+
+    // Reload skill bars when the page loads
+    window.addEventListener('load', reloadSkillBars);
+
+    // Reload skill bars when the user navigates back to the page
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            reloadSkillBars();
+        }
+    });
+    </script>
+</body>
+</html>

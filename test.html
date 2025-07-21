@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Farhan Kabir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+            object-fit: cover;
+        }
+
+        .typed-cursor {
+            font-size: 2.5rem;
+            color: #ff014f;
+        }
+
+        .typed {
+            color: #ff014f;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+
+<body class="home">
+    <video id="background-video" autoplay loop muted playsinline>
+        <source src="https://farhankabir133.github.io/fkhub/videos/home_background61.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <section class="container-fluid main-container container-home p-0">
+        <div class="row home-details-container align-items-center">
+            <div class="col-12 home-details text-center">
+                <div>
+                    <h6 class="text-uppercase open-sans-font mb-0">hi there !</h6>
+                    <h1 class="text-uppercase poppins-font">
+                        <span>I'm </span>
+                        <span class="typed"></span>
+                    </h1>
+                    <p class="open-sans-font" style="text-align: justify;">
+                        <strong>I'm an international web designer, full-stack developer, and Flutter developer dedicated to delivering intuitive, user-centric digital solutions...</strong>
+                    </p>
+                    <a href="about.html" class="btn btn-dark">more about me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typed.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".typed", {
+            strings: ["Farhan Kabir"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+    </script>
+
+    <!-- JS Files -->
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
